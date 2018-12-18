@@ -6,7 +6,6 @@ import random
 
 '''
 TODO
-Save images to Desktop
 Find a way to resize images
 Find a way to make image_list appear more conveniently
 '''
@@ -14,18 +13,19 @@ Find a way to make image_list appear more conveniently
 api_key = 'AIzaSyDJNu6pW7kifKiVssTdMlyad-hUc3stgOg'
 tinify.key = 'DJxqxb2DBprtLcm5QlsbpsJt8MNrvLkc'
 
-print('Enter domain: ')
+print('Enter domain: (www.domain.com)')
 url = input().replace('https', '').replace('http', '').replace('/', '').replace(':', '').strip()
 print("Querying " + url + '...')
 api_url = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://' + url + '&strategy=mobile&key=' + api_key
+user = os.environ['USERPROFILE']
 
 # creates a folder for the compressed images
 try:
-    save_path = 'C:/users/marcus.legault/scripts/compressed_images/' + url
+    save_path = user + '/Desktop/compressed_images/' + url
     os.makedirs(save_path)
 
 except FileExistsError:
-    save_path = 'C:/users/marcus.legault/scripts/compressed_images/' + url + str(random.randint(1,101))
+    save_path = user + '/Desktop/compressed_images/' + url + str(random.randint(1,101))
     os.makedirs(save_path)
 
 # return JSON

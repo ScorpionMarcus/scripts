@@ -1,7 +1,7 @@
 import dns.resolver
 import os
 
-url = 'vadefensecounsel.com'
+url = 'swiftplumb.com'
 myResolver = dns.resolver.Resolver()
 
 a = myResolver.query(url, 'A')

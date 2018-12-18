@@ -4,6 +4,13 @@ import os
 import tinify
 import random
 
+'''
+TODO
+Save images to Desktop
+Find a way to resize images
+Find a way to make image_list appear more conveniently
+'''
+
 api_key = 'AIzaSyDJNu6pW7kifKiVssTdMlyad-hUc3stgOg'
 tinify.key = 'DJxqxb2DBprtLcm5QlsbpsJt8MNrvLkc'
 

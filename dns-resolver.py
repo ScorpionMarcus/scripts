@@ -1,6 +1,12 @@
 import dns.resolver
 import os
 
+'''
+TODO
+add whois
+save results to desktop
+'''
+
 url = 'swiftplumb.com'
 myResolver = dns.resolver.Resolver()
 

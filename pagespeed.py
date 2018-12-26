@@ -7,7 +7,6 @@ import random
 '''
 TODO
 Find a way to resize images
-Find a way to make image_list appear more conveniently
 '''
 
 api_key = 'AIzaSyDJNu6pW7kifKiVssTdMlyad-hUc3stgOg'

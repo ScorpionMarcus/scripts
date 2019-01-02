@@ -5,7 +5,6 @@ import random
 
 '''
 TODO
-before doing anything else, check to see if the site exists
 '''
 
 print('Enter domain: ')

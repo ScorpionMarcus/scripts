@@ -1,19 +1,29 @@
 from selenium import webdriver
 
+'''
+TODO
+pull domains differently
+very slow using chromedriver
+'''
+
 url = [
-'adamstonelawfirm.com',
-'johnsonkraeuter.com',
-'natural-lookingresults.com',
-'haroldcampbell.com',
-'deloachelawoffice.com',
-'zenlawfirm.com',
-'mdaccidentlaw.com',
-'1876law.com',
-'hesslawoffice.com',
-'hchlawyers.com',
-'caseysimmonsandbryant.com',
-'huttonlaw.com',
-'orangecountylitigationfirm.com'
+'cynthiamendoza.com',
+'moorelaw.com',
+'kylawpractice.com',
+'hessolar.com',
+'collinsdentalcare.com',
+'dcrashlaw.com',
+'coralspringsinjuryfirm.com',
+'fortlauderdalepersonalinjuryfirm.com',
+'mcguirelawplc.com',
+'schwartzandperry.com',
+'sachslawyers.com',
+'o2law.com',
+'brettpritchardlaw.com',
+'rieserfamilydental.com',
+'tevislawfirm.com',
+'taubcriminaldefense.com',
+'fischerlawlv.com'
 ]
 
 for i in url:

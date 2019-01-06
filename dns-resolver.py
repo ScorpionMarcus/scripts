@@ -2,21 +2,16 @@ import dns.resolver
 import os
 import whois
 import random
-import platform
+from pathlib import Path
 
 '''
 TODO
-currently only works on Windows--> update user profile to accommadate linux or mac
-new save location
-maybe new version for linux
-grand launch tool?
 '''
 
-print(platform.platform())
 print('Enter domain: ')
 url = input().replace('https', '').replace('http', '').replace('/', '').replace(':', '').replace('www.', '').strip()
 myResolver = dns.resolver.Resolver()
-user = os.environ['USERPROFILE']
+user = str(Path.home())
 arr = []
 
 print('\nQuerying ' + url + '...')

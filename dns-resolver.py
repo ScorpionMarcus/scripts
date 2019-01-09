@@ -3,6 +3,7 @@ import os
 import whois
 import random
 from pathlib import Path
+import requests
 
 '''
 TODO
@@ -37,6 +38,15 @@ except FileExistsError:
     os.makedirs(save_path)
 
 readme = open(save_path + '/' + 'README.txt', 'a')
+
+try:
+    status = requests.get('http://www.' + url + '/_status')
+    if status.status_code == 200:
+        readme.write(status.text)
+    else:
+        pass
+except:
+    pass
 
 for rdata in arr:
     for i in rdata:

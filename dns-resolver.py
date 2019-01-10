@@ -7,6 +7,7 @@ import requests
 
 '''
 TODO
+Records in README need to be labeled
 '''
 
 print('Enter domain: ')

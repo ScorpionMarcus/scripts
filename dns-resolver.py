@@ -8,6 +8,8 @@ import requests
 '''
 TODO
 Records in README need to be labeled
+Enter domain in command prompt
+
 '''
 
 print('Enter domain: ')
@@ -43,7 +45,7 @@ readme = open(save_path + '/' + 'README.txt', 'a')
 try:
     status = requests.get('http://www.' + url + '/_status')
     if status.status_code == 200:
-        readme.write(status.text)
+        readme.write(status.text + '\n')
     else:
         pass
 except:

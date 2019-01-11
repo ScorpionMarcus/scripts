@@ -1,37 +1,29 @@
-from selenium import webdriver
+import webbrowser
 
 '''
 TODO
-pull domains differently
-very slow using chromedriver
+url needs to reference something else
 '''
 
 url = [
-'cynthiamendoza.com',
-'moorelaw.com',
-'kylawpractice.com',
-'hessolar.com',
-'collinsdentalcare.com',
-'dcrashlaw.com',
-'coralspringsinjuryfirm.com',
-'fortlauderdalepersonalinjuryfirm.com',
-'mcguirelawplc.com',
-'schwartzandperry.com',
-'sachslawyers.com',
-'o2law.com',
-'brettpritchardlaw.com',
-'rieserfamilydental.com',
-'tevislawfirm.com',
-'taubcriminaldefense.com',
-'fischerlawlv.com'
+'buschreedlaw.com',
+'ailawoffice.com',
+'mhlawpllc.com',
+'newark-lawyers.com',
+'superiorairrepair.com',
+'makaufman.com',
+'familylawyerct.com',
+'harvellaw.com',
+'docrusk.com',
+'ingramplumbing.com',
+'chriscavazoslaw.com'
 ]
 
 for i in url:
 	try:
 		print(i + " -- retaking screenshot")
-		chromedriver = 'C:/Users/marcus.legault/scripts/chromedriver.exe'
-		driver = webdriver.Chrome(chromedriver)
-		driver.get('https://sms.scorpiondesign.com/cms/screenshots/' + 'www.' + i + '.png?retake=true')
+		chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+		webbrowser.get(chrome_path).open_new_tab('https://sms.scorpiondesign.com/cms/screenshots/' + 'www.' + i + '.png?retake=true')
 		print(i + " -- screenshot retaken successfully\n")
 
 	except:

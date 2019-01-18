@@ -4,16 +4,13 @@ import whois
 import random
 from pathlib import Path
 import requests
+import sys
 
 '''
 TODO
-Records in README need to be labeled
-Enter domain in command prompt
-
 '''
 
-print('Enter domain: ')
-url = input().replace('https', '').replace('http', '').replace('/', '').replace(':', '').replace('www.', '').strip()
+url = sys.argv[1].replace('https', '').replace('http', '').replace('/', '').replace(':', '').replace('www.', '').strip()
 myResolver = dns.resolver.Resolver()
 user = str(Path.home())
 arr = []
@@ -45,7 +42,7 @@ readme = open(save_path + '/' + 'README.txt', 'a')
 try:
     status = requests.get('http://www.' + url + '/_status')
     if status.status_code == 200:
-        readme.write(status.text + '\n')
+        readme.write(status.text + '\n\n')
     else:
         pass
 except:
@@ -54,10 +51,11 @@ except:
 for rdata in arr:
     for i in rdata:
         readme.write(str(i) + '\n\n')
+        print(str(i))
 
 try:
-    whois = whois.whois(url).text
-    readme.write(whois)
+    info = whois.whois(url).text
+    readme.write(info)
 except:
     print('Unable to retrieve WHOIS')
 

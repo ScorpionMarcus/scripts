@@ -43,6 +43,7 @@ try:
     status = requests.get('http://www.' + url + '/_status')
     if status.status_code == 200:
         readme.write(status.text + '\n\n')
+        print(status.text)
     else:
         pass
 except:

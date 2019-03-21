@@ -6,19 +6,7 @@ url needs to reference something else
 '''
 
 url = [
-'adelolalaw.com',
-'penningplumbing.com',
-'henrylawfirm.com',
-'thomastears.com',
-'henderson-law.com',
-'mycleanteam.com',
-'cflegal.net',
-'stegplumbing.com',
-'nevadalegalcounsel.com',
-'divorcelawyersuffolkcounty.com',
-'uselderlaw.com',
-'sylvesterlawfirm.com',
-'moralawonline.com'
+'mwke.com'
 ]
 
 for i in url:

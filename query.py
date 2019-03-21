@@ -8,6 +8,7 @@ import sys
 
 '''
 TODO
+fix html bug
 '''
 
 url = sys.argv[1].replace('https', '').replace('http', '').replace('/', '').replace(':', '').replace('www.', '').strip()

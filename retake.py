@@ -2,12 +2,15 @@ import webbrowser
 
 '''
 TODO
-url needs to reference something else
 '''
+url = []
+u = open('urls.txt', 'r').readlines()
 
-url = [
-'mwke.com'
-]
+def removeBreak(read, arr):
+    for i in read:
+        arr.append(i.rstrip('\n'))
+
+removeBreak(u, url)
 
 for i in url:
 	try:

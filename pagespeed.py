@@ -20,11 +20,11 @@ user = os.environ['USERPROFILE']
 
 # creates a folder for the compressed images
 try:
-    save_path = user + '/Desktop/compressed_images/' + url
+    save_path = 'compressed_images' + '/' + url
     os.makedirs(save_path)
 
 except FileExistsError:
-    save_path = user + '/Desktop/compressed_images/' + url + str(random.randint(1,101))
+    save_path = 'compressed_images' + '/' + url + str(random.randint(1,101))
     os.makedirs(save_path)
 
 # return JSON
@@ -46,7 +46,6 @@ try:
             print('Compressing ' + pic_name + '...')
             tinify.from_url(pic_url).to_file(completeName)
             print('Saved to ' + completeName)
-        
 
     # create text file list for image URLs
     image_list = open(save_path + '/' + 'image_list.txt', 'a')
@@ -55,7 +54,7 @@ try:
     # loop through the image URL to print references
     for item in data['lighthouseResult']['audits']['uses-optimized-images']['details']['items']:
         image_list.write(item['url'] + "\n")
-
+        
 except KeyError:
     print(url + ' is not a valid domain name')
 

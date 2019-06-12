@@ -34,13 +34,19 @@ try:
     # loop through the image URLs from the JSON
     for item in data['lighthouseResult']['audits']['uses-optimized-images']['details']['items']:
         pic_url = item['url']
-        pic_name = pic_url.split("/")[-1]
-        completeName = os.path.join(save_path, pic_name)
 
-        # tinypng pulls from image URLs, compresses, then saves
-        print('Compressing ' + pic_name + '...')
-        tinify.from_url(pic_url).to_file(completeName)
-        print('Saved to ' + completeName)
+        # NGage is causing an issue, this is a workaround
+        if "GeneralImage.aspx" in pic_url:
+            print("NGage result exempted")
+        else:
+            pic_name = pic_url.split("/")[-1]
+            completeName = os.path.join(save_path, pic_name)
+
+            # tinypng pulls from image URLs, compresses, then saves
+            print('Compressing ' + pic_name + '...')
+            tinify.from_url(pic_url).to_file(completeName)
+            print('Saved to ' + completeName)
+        
 
     # create text file list for image URLs
     image_list = open(save_path + '/' + 'image_list.txt', 'a')
